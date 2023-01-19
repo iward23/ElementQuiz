@@ -20,7 +20,6 @@ class ViewController: UIViewController {
     @IBOutlet var answerLabel: UILabel!
     
     let elementList = ["Carbon", "Gold", "Chlorine", "Sodium"]
-    var currentElement = 0
     var currentElementIndex = 0
     
     func updateElement() {
@@ -29,5 +28,41 @@ class ViewController: UIViewController {
         imageView.image = image
         answerLabel.text = "?"
     }
+    
+    
+    @IBAction func showAnswer(_ sender: Any) {
+        answerLabel.text = elementList[currentElementIndex]
+
+    }
+    
+    
+    @IBAction func next(_ sender: Any) {
+        currentElementIndex += 1
+        
+        if currentElementIndex == elementList.count
+        {
+            currentElementIndex = 0
+        }
+        updateElement()
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 
